@@ -24,13 +24,23 @@ namespace RevitAddin.ElementOverrideExample.Services
 
             ElementId fillPatternId = GetSolidFillPatternElement(document).Id;
 
+            SetFillPatterColor(overrideGraphicSettings, fillPatternId, color);
+
+            view.SetElementOverrides(element.Id, overrideGraphicSettings);
+        }
+
+        private void SetFillPatterColor(OverrideGraphicSettings overrideGraphicSettings, ElementId fillPatternId, Color color)
+        {
+#if Revit2018 || Revit2017
+            overrideGraphicSettings.SetProjectionFillColor(color);
+            overrideGraphicSettings.SetProjectionFillPatternId(fillPatternId);
+#else
             overrideGraphicSettings.SetSurfaceBackgroundPatternColor(color);
             overrideGraphicSettings.SetSurfaceBackgroundPatternId(fillPatternId);
 
             overrideGraphicSettings.SetSurfaceForegroundPatternColor(color);
             overrideGraphicSettings.SetSurfaceForegroundPatternId(fillPatternId);
-
-            view.SetElementOverrides(element.Id, overrideGraphicSettings);
+#endif
         }
 
         private FillPatternElement GetSolidFillPatternElement(Document document)
