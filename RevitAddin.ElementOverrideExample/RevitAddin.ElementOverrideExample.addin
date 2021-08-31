@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>RevitAddin.ElementOverrideExample Application</Name>
+    <Assembly>RevitAddin.ElementOverrideExample.dll</Assembly>
+    <FullClassName>RevitAddin.ElementOverrideExample.Revit.App</FullClassName>
+    <ClientId>cd1841fb-19be-4d68-bcee-02c1db0acdd3</ClientId>
+    <VendorId>RevitAddin.ElementOverrideExample</VendorId>
+    <VendorDescription>RevitAddin.ElementOverrideExample</VendorDescription>
+    <AllowLoadingIntoExistingSession>true</AllowLoadingIntoExistingSession>
+  </AddIn>
+</RevitAddIns>
