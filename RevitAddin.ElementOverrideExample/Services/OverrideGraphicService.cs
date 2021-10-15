@@ -26,6 +26,10 @@ namespace RevitAddin.ElementOverrideExample.Services
 
             SetFillPatterColor(overrideGraphicSettings, fillPatternId, color);
 
+            ElementId linePatternId = LinePatternElement.GetSolidPatternId();
+
+            SetLinePatterColor(overrideGraphicSettings, linePatternId, ColorUtil.Color_108);
+
             view.SetElementOverrides(element.Id, overrideGraphicSettings);
         }
 
@@ -54,5 +58,10 @@ namespace RevitAddin.ElementOverrideExample.Services
             return element;
         }
 
+        private void SetLinePatterColor(OverrideGraphicSettings overrideGraphicSettings, ElementId linePatternId, Color color)
+        {
+            overrideGraphicSettings.SetProjectionLineColor(color);
+            overrideGraphicSettings.SetProjectionLinePatternId(linePatternId);
+        }
     }
 }

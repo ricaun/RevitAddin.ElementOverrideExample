@@ -191,6 +191,7 @@
     <Compile Include="Revit\Commands\ColorCommand.cs" />
     <Compile Include="Revit\Commands\ClearCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ColorUtil.cs" />
     <Compile Include="Services\OverrideGraphicController.cs" />
     <Compile Include="Services\OverrideGraphicService.cs" />
   </ItemGroup>
